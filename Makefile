@@ -18,3 +18,6 @@ lint:
 
 fix:
 	npm run fix
+
+test-coverage:
+	npm run test-coverage

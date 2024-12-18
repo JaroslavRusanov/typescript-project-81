@@ -4,7 +4,6 @@
   "description": "TypeScript project",
   "main": "./src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf ./dist && tsc",
     "start:dev": "npx nodemon",
     "start:dev-experimental": "node --watch --loader=ts-node/esm ./src/index.ts",
@@ -12,6 +11,7 @@
     "exec": "npx ts-node ./src/index.ts",
     "lint": "npx eslint .",
     "fix": "npx eslint . --fix",
+    "test": "npx vitest run",
     "test-coverage": "npx vitest run --coverage"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/JaroslavRusanov/typescript-project-81#readme",
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
@@ -32,6 +33,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.15.0",
     "eslint-plugin-promise": "^7.2.1",
+    "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   }

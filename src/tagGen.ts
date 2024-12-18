@@ -3,21 +3,21 @@ class TagGen {
     public name: string,
     public attributes: { [key: string]: string } = {},
     public content: string = '',
-    public isSelfClosing: boolean = ['br', 'img', 'input'].includes(this.name),
   ) {}
 
   toString() {
+    const isSelfClosing: boolean = ['br', 'img', 'input'].includes(this.name);
     const attributes = Object.entries(this.attributes)
-      .map(([key, value]) => `${key}=${value}`)
-      .join(' ');
+      .map(([key, value]) => ` ${key}="${value}"`)
+      .join('');
 
-    if (this.isSelfClosing) {
+    if (isSelfClosing) {
       return (
-        `<${this.name} ${attributes} />`
+        `<${this.name}${attributes}>`
       );
     }
     return (
-      `<${this.name} ${attributes}>${this.content}</${this.name}`
+      `<${this.name}${attributes}>${this.content}</${this.name}>`
     );
   }
 }
