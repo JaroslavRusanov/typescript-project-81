@@ -1,0 +1,37 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "TypeScript project",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf ./dist && tsc",
+    "start:dev": "npx nodemon",
+    "start:dev-experimental": "node --watch --loader=ts-node/esm ./src/index.ts",
+    "start": "npm run build && node dist/index.js",
+    "exec": "npx ts-node ./src/index.ts",
+    "lint": "npx eslint .",
+    "fix": "npx eslint . --fix",
+    "test-coverage": "npx vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaroslavRusanov/typescript-project-81.git"
+  },
+  "author": "Iaroslav Rusanov, sco.nuff@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JaroslavRusanov/typescript-project-81/issues"
+  },
+  "homepage": "https://github.com/JaroslavRusanov/typescript-project-81#readme",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-standard-with-typescript": "^18.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.15.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "typescript": "^5.7.2"
+  }
+}
